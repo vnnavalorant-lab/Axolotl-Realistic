@@ -15,8 +15,11 @@ public class PinkAxolotlRenderer extends LivingEntityRenderer<AxolotlEntity, Pin
     private static final Identifier TEXTURE = new Identifier("pinkaxolotl", "textures/entity/white.png");
     private static final Identifier MODEL = new Identifier("pinkaxolotl", "models/axolotl.axm");
 
+    /** Purely visual size multiplier (hitbox, AI and shadow logic are untouched). 1.0 = vanilla-sized (~0.8 blocks long). */
+    public static final float VISUAL_SCALE = 2.0f;
+
     public PinkAxolotlRenderer(EntityRendererFactory.Context ctx) {
-        super(ctx, load(ctx.getResourceManager()), 0.35f);
+        super(ctx, load(ctx.getResourceManager()), 0.35f * VISUAL_SCALE);
     }
 
     private static PinkAxolotlModel load(ResourceManager rm) {
@@ -34,6 +37,7 @@ public class PinkAxolotlRenderer extends LivingEntityRenderer<AxolotlEntity, Pin
 
     @Override
     protected void scale(AxolotlEntity entity, MatrixStack matrices, float amount) {
-        if (entity.isBaby()) matrices.scale(0.5f, 0.5f, 0.5f);
+        float k = VISUAL_SCALE * (entity.isBaby() ? 0.5f : 1.0f);
+        matrices.scale(k, k, k);
     }
 }

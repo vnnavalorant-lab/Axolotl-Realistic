@@ -27,7 +27,8 @@ Coloque o jar em `mods/` junto com o Fabric API (0.92.x) para jogar.
   `CFG` em `build_model.py` (ex.: `body=3600`) para mais/menos polígonos.
 
 ## Ajustes comuns
-* Tamanho: `LEN` em `build_model.py` (0.80 = comprimento focinho→cauda em blocos).
+* Tamanho visual: `VISUAL_SCALE` em `PinkAxolotlRenderer` (2.0 = dobro; só visual, a hitbox continua a do vanilla).
+* Tamanho base: `LEN` em `build_model.py` (0.80 = comprimento focinho→cauda em blocos).
 * Custo: ~0,3 ms de CPU por axolote visível (skinning) + 4 vértices por triângulo enviados ao buffer.
 
 Licença/créditos: veja `CREDITS.md` (modelo CC BY-NC 4.0 — uso não comercial, com atribuição).
