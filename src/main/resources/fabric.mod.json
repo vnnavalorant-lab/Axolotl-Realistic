@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "pinkaxolotl",
+  "version": "${version}",
+  "name": "Pink Axolotl (animated)",
+  "description": "Replaces the axolotl with a fully skeleton-animated model (idle, walk, swim, bite) with cross-fading.",
+  "authors": ["Model: Animal Animator (Sketchfab)"],
+  "contact": { "sources": "https://sketchfab.com/3d-models/pink-axolotl-ambystoma-mexicanum-d9740a64074d40c98f87bc793f12cef5" },
+  "license": "Code: MIT; model/animations: CC-BY-NC-4.0 (see CREDITS.md)",
+  "environment": "client",
+  "entrypoints": { "client": ["com.pinkaxolotl.client.PinkAxolotlClient"] },
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
